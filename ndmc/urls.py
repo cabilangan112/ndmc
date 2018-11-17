@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(next_page=reverse_lazy('login')), name='logout'),
-    # path('register/', RegisterFormView.as_view(), name='register')
+    ## path('register/', RegisterFormView.as_view(), name='register')
 ]
 
 if settings.DEBUG:
