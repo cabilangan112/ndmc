@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'social_django',
     'account',
     'alutracer',
-    'pdfdrive'
+    'pdfdrive',
  
 ]
 

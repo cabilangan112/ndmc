@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account',
     'alutracer',
-    'pdfdrive'
+    'pdfdrive',
     'social_django',
 ]
 
