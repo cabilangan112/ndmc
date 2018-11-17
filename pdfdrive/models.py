@@ -21,5 +21,5 @@ class PathAndRename(object):
         else:
             filename = '{}.{}'.format(instance.pk,ext)
         return os.path.join(self.path, filename)
-path_and_rename = PathAndRename("file/")
+path_and_rename = PathAndRename("media/file/")
 
