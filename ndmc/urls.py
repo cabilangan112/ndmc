@@ -21,17 +21,12 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
-
-
-
-#social account
-	path('oauth', include('social_django.urls', namespace='social')),
-=======
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(next_page=reverse_lazy('login')), name='logout'),
     ## path('register/', RegisterFormView.as_view(), name='register')
->>>>>>> 448884b17580f4c3aa165577689e839a6f1b0028
+
+#social account
+	path('oauth', include('social_django.urls', namespace='social')),
 ]
 
 if settings.DEBUG:
