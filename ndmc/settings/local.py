@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'account',
     'alutracer',
     'pdfdrive'
+    'social_django',
 ]
 
 MIDDLEWARE = [
