@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'account',
     'alutracer',
     'pdfdrive'
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "live-static", "static-root")
 MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "live-static", "media-root")
+
+LOGIN_REDIRECT_URL = '/'
