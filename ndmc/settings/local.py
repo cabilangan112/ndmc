@@ -111,6 +111,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GooglePlusAuth',
+    'social_core.backends.open_id.OpenIdAuth',
+    'social_core.backends.google.GoogleOpenId',  
+    'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
@@ -149,3 +153,7 @@ LOGIN_REDIRECT_URL = '/'
 SOCIAL_AUTH_FACEBOOK_API_VERSION = '2.8'
 SOCIAL_AUTH_FACEBOOK_KEY = '2050406058376300' 
 SOCIAL_AUTH_FACEBOOK_SECRET = '01ffbc770f7968e2344e0ca85e26091b'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='1026996181599-a3hr0blgntgkd26mjai98la7cie53055.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'LaHXGU-USogmEMOha5ydSp_u' #Paste Secret Key
+OPENID_SSO_SERVER_URL = 'https://www.google.com/accounts/o8/site-xrds?hd=<my-domain>.com'
+

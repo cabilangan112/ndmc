@@ -45,6 +45,7 @@
                     <input type="submit" value="login" class="btn foode-btn"/>
                     <input type="hidden" name="next" value="{{ next }}" />
                     <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+                     <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
                   </div>
                 </div>
               </form>
