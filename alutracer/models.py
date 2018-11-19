@@ -49,7 +49,8 @@ class PersonalInformation(models.Model):
     country                     = models.TextField()
     social_media_account        = models.CharField(max_length=255)
     mobile_number               = models.IntegerField()
-    date_graduated              = models.ForeignKey('PersonalInformation', on_delete=models.CASCADE)
+    course                      = models.ForeignKey('PersonalInformation', on_delete=models.CASCADE)
+    date_graduated              = models.DateTimeField()
     date_created                = models.DateTimeField(auto_now_add=True)
     date_modified               = models.DateTimeField(auto_now=True)
 
