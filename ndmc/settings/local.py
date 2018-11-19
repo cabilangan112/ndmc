@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+ 
     'social_django',
     'account',
     'alutracer',
@@ -71,6 +72,7 @@ TEMPLATES = [
 
                 'social_django.context_processors.backends',  
                 'social_django.context_processors.login_redirect',
+            
             ],
         },
     },
@@ -144,3 +146,6 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "live-static", "media-root")
 
 LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_FACEBOOK_API_VERSION = '2.8'
+SOCIAL_AUTH_FACEBOOK_KEY = '2050406058376300' 
+SOCIAL_AUTH_FACEBOOK_SECRET = '01ffbc770f7968e2344e0ca85e26091b'
