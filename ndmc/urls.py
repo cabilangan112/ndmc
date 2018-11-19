@@ -24,7 +24,7 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(next_page=reverse_lazy('login')), name='logout'),
     ## path('register/', RegisterFormView.as_view(), name='register')
-#social account
+ 
     path('oauth', include('social_django.urls', namespace='social')),
 ]
 if settings.DEBUG:

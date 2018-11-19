@@ -39,39 +39,47 @@ class Course(models.Model):
     def __str__(self):
         return '{}'.format(self.course_code)
 
+    class Meta:
+        ordering = ['-date_created']
+
+
 class Department(models.Model):
     department_code        = models.CharField(max_length=100)
     department_description = models.CharField(max_length=100) 
     date_created           = models.DateTimeField(auto_now_add=True)
     date_modified          = models.DateTimeField(auto_now=True)
 
-
     def __str__(self):
         return '{}'.format(self.department_code)
 
-class Author(models.Model):
-    lastname   = models.CharField(max_length=100)
-    firtsname  = models.CharField(max_length=100)
-    middlename = models.CharField(max_length=100)
-    department = models.ForeignKey(Department, null=True,on_delete=models.CASCADE)
-    course     = models.ForeignKey(Course, null=True,on_delete=models.CASCADE)
-    Year       = models.CharField(max_length=6, choices=YEAR, blank=True, default=True)
+    class Meta:
+        ordering = ['-date_created']
 
+class Author(models.Model):
+    lastname           = models.CharField(max_length=100)
+    firtsname          = models.CharField(max_length=100)
+    middlename         = models.CharField(max_length=100)
+    department         = models.ForeignKey(Department, null=True,on_delete=models.CASCADE)
+    course             = models.ForeignKey(Course, null=True,on_delete=models.CASCADE)
+    Year               = models.CharField(max_length=6, choices=YEAR, blank=True, default=True)
+ 
     def __str__(self):
-        return '{}'.format(self.lastname, firtsname)
+        return '{}'.format(self.lastname)
+
+    class Meta:
+        ordering = ['-id']
 
 class Post(models.Model):
     title          = models.CharField(max_length=100)
     description    = models.TextField(null=True, blank=True)
-    author         = models.CharField(max_length=100)
-    file           = models.FileField(upload_to="media/pdf", null=True)
+    author         = models.ForeignKey(Author, null=True,on_delete=models.CASCADE)
+    file           = models.FileField(upload_to="pdf", null=True)
     date_uploaded  = models.DateTimeField(auto_now_add=True)
     modified       = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return '{}'.format(self.title)
 
+    class Meta:
+        ordering = ['-date_uploaded']
 
-
-
- 
