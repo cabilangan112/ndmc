@@ -26,7 +26,7 @@ urlpatterns = [
     ## path('register/', RegisterFormView.as_view(), name='register')
 
 #social account
-	path('oauth', include('social_django.urls', namespace='social')),
+    path('oauth', include('social_django.urls', namespace='social')),
 ]
 
 if settings.DEBUG:
