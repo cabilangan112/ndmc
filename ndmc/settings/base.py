@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'alutracer',
     'pdfdrive',
     'social_django',
+    'rest_framework',
  
 ]
 

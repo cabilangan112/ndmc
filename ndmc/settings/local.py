@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'alutracer',
     'pdfdrive',
     'social_django',
+    'rest_framework',
  
 ]
 
@@ -154,4 +155,4 @@ SOCIAL_AUTH_FACEBOOK_KEY = '2050406058376300'
 SOCIAL_AUTH_FACEBOOK_SECRET = '01ffbc770f7968e2344e0ca85e26091b'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='1026996181599-u3andpnegjgj1t82jnnvpmmdo0pneo3o.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'd4211jVtJ9gHLe-rAjDUzsei' #Paste Secret Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'd4211jVtJ9gHLe-rAjDUzsei'

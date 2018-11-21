@@ -57,14 +57,14 @@ class Department(models.Model):
 
 class Author(models.Model):
     lastname           = models.CharField(max_length=100)
-    firtsname          = models.CharField(max_length=100)
+    firstname          = models.CharField(max_length=100)
     middlename         = models.CharField(max_length=100)
     department         = models.ForeignKey(Department, null=True,on_delete=models.CASCADE)
     course             = models.ForeignKey(Course, null=True,on_delete=models.CASCADE)
     Year               = models.CharField(max_length=6, choices=YEAR, blank=True, default=True)
  
     def __str__(self):
-        return '{}'.format(self.lastname)
+        return '{}'.format(self.lastname,self.firstname)
 
     class Meta:
         ordering = ['-id']

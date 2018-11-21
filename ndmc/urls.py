@@ -24,8 +24,10 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(next_page=reverse_lazy('login')), name='logout'),
     ## path('register/', RegisterFormView.as_view(), name='register')
- 
+    
     path('oauth', include('social_django.urls', namespace='social')),
+    #App Urls
+    path('pdfdrive/', include('pdfdrive.urls', namespace='pdf')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
