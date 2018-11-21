@@ -8,7 +8,7 @@ from .serializers import pdfdriveserializer,CourseSerializer,DepartmentSerialize
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
 
-class pdflistAPI(ViewSet):
+class PDFListAPI(ViewSet):
 
     def list(self ,request):
         queryset = Post.objects.all()

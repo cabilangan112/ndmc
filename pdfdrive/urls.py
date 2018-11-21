@@ -1,10 +1,10 @@
 from django.urls import path
  
 app_name='pdfdrive'
-from .views import pdflistAPI,AuthorAPI,DepartmentAPI,CourseAPI
+from .views import PDFListAPI,AuthorAPI,DepartmentAPI,CourseAPI
  
 
-pdf = pdflistAPI.as_view({
+pdf = PDFListAPI.as_view({
 	'get': 'list',
 	'post':'create'
 })
