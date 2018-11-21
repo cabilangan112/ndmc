@@ -24,6 +24,41 @@ class PDFListAPI(ViewSet):
             return Response(status=201)
         return Response(serializer.errors, status=400)
 
+
+    def get_author(self, *args, **kwargs):
+        author = Author.objects.all()
+        serializer = AuthorSerializer(author, many=True)
+        return Response(serializers.data)
+
+    def get_object(self, pk):
+        try:
+            return Post.objects.get(pk=pk)
+        except Post.DoesNotExist:
+            raise Http404
+
+    def put(self, request, pk, format=None):
+        serializer = pdfdriveserializer(data=request.data)
+        if serializer.is_valid():
+            post = serializer.save()
+            for author in request.data.get('authors'):
+                a = Author.objects.get(id=author)
+                post.authors.add(a)
+            return Response(serializer.data)
+        return Response(serializer.errors )
+
+    def details(self, request, pk=None):
+        queryset = Post.objects.all()
+        post = get_object_or_404(queryset, pk=pk)
+        serializer_context = {'request': request,}
+        serializer = pdfdriveserializer(post, context=serializer_context)
+        return Response(serializer.data)
+
+
+    def delete(self, request, pk, format=None):
+        snippet = self.get_object(pk)
+        snippet.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)  
+
 class CourseAPI(ViewSet):
 
     def list(self ,request):
