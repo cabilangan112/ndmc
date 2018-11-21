@@ -61,7 +61,7 @@ class Author(models.Model):
     middlename         = models.CharField(max_length=100)
     department         = models.ForeignKey(Department, null=True,on_delete=models.CASCADE)
     course             = models.ForeignKey(Course, null=True,on_delete=models.CASCADE)
-    Year               = models.CharField(max_length=6, choices=YEAR, blank=True, default=True)
+    year               = models.CharField(max_length=6, choices=YEAR, blank=True, default=True)
  
     def __str__(self):
         return '{}'.format(self.lastname,self.firstname)

@@ -26,7 +26,7 @@ author = AuthorAPI.as_view({
 
 urlpatterns = [
 	path('pdflist', pdf, name='pdflist'),
-	path('course', course, name='courselist'),
+	path('courselist', course, name='courselist'),
 	path('departmentlist', department, name='deplist'),
 	path('authorlist', author, name='authorlist'),
 	]
