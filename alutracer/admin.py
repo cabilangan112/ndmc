@@ -20,4 +20,3 @@ admin.site.register(Course)
 admin.site.register(Choice)
 admin.site.register(PersonalInformation)
 admin.site.register(Question, QuestionAdmin)
-
