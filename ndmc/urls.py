@@ -28,6 +28,7 @@ urlpatterns = [
     path('oauth', include('social_django.urls', namespace='social')),
     #App Urls
     path('pdfdrive/', include('pdfdrive.urls', namespace='pdf')),
+    path('alutracer/', include('alutracer.urls', namespace='alutracer'))
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
