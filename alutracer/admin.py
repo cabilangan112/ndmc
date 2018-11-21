@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Course, Choice, PersonalInformation, Question
 
-class ChoceInline(admin.TabulareInline):
+class ChoceInline(admin.TabularInline):
     model = Choice
     extra = 3
 
