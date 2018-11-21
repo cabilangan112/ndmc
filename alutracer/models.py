@@ -23,7 +23,7 @@ class Question(models.Model):
     date_modified               = models.DateTimeField(auto_now = True)
 
     def __str__(self):
-        return '{}'.format(question_text)
+        return '{}'.format(self.question_text)
 
     class Meta:
         ordering = ['-id']
@@ -36,7 +36,7 @@ class Choice(models.Model):
     date_modified               = models.DateTimeField(auto_now = True)
 
     def __str__(self):
-        return '{}'.format(choices_text)
+        return '{}'.format(self.choices_text)
 
 class Course(models.Model):
     user                        = models.ForeignKey(User, on_delete = models.CASCADE)
@@ -46,7 +46,7 @@ class Course(models.Model):
     date_modified               = models.DateTimeField(auto_now = True)
 
     def __str__(self):
-        return '{}'.format(course_code)
+        return '{}'.format(self.course_code)
 
     class Meta:
         ordering = ['-id']
