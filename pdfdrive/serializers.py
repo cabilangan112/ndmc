@@ -39,6 +39,23 @@ class pdfdriveserializer(serializers.ModelSerializer):
     def get_timesince(self, instance):
         return timesince(instance.modified) + " ago"   
 
+class PdfDriveEditSerializer(serializers.Serializer):
+
+    title = serializers.CharField(max_length=100)
+    description = serializers.CharField(max_length=200)
+    author = serializers.CharField(max_length=150)
+    file = serializers.FileField(max_length=100)
+
+    def update(self, validated_data, instance):
+
+        instance.title = validated_data.get('title')
+        instance.description = validated_data.get('description')
+        instance.author = validated_data.get('author')
+        instance.file = validated_data.get('file')
+        instance.save()
+        return instance()
+
+
 class CourseSerializer(serializers.ModelSerializer):
     date_display = serializers.SerializerMethodField()
     timesince = serializers.SerializerMethodField()

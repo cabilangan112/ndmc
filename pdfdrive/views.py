@@ -37,7 +37,7 @@ class PDFListAPI(ViewSet):
             raise Http404
 
     def edit(self, request,   format=None):
-        serializer = pdfdriveserializer(data=request.data)
+        serializer = PdfDriveEditSerializer(data=request.data)
         if serializer.is_valid():
             post = serializer.save()
             for author in request.data.get('authors'):
