@@ -36,7 +36,7 @@ class PDFListAPI(ViewSet):
         except Post.DoesNotExist:
             raise Http404
 
-    def put(self, request, pk, format=None):
+    def edit(self, request,   format=None):
         serializer = pdfdriveserializer(data=request.data)
         if serializer.is_valid():
             post = serializer.save()
@@ -46,7 +46,7 @@ class PDFListAPI(ViewSet):
             return Response(serializer.data)
         return Response(serializer.errors )
 
-    def details(self, request, pk=None):
+    def put(self, request, pk=None):
         queryset = Post.objects.all()
         post = get_object_or_404(queryset, pk=pk)
         serializer_context = {'request': request,}

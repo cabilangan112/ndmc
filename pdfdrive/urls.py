@@ -11,7 +11,7 @@ pdf = PDFListAPI.as_view({
 })
 
 pdf_detail = PDFListAPI.as_view({
-	'get':'details',
+	'get':'put',
 	'post':'edit'
 })
 
