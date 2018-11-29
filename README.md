@@ -1,7 +1,6 @@
 # Alumni Tracer and PDF drive App
 
-AluTracer and PDF drive app using Django Rest Framework and jQuery for @Swiftkind Interns of Summer 2018
-
+AluTracer and PDF drive app using Django Rest Framework and jQuery for NDMC
 
 # Stack
 
