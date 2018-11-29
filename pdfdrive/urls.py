@@ -2,7 +2,6 @@ from django.urls import path
  
 app_name='pdfdrive'
 from .views import PDFListAPI,AuthorAPI,DepartmentAPI,CourseAPI
- 
 
 pdf = PDFListAPI.as_view({
 	'get': 'list',
@@ -11,7 +10,7 @@ pdf = PDFListAPI.as_view({
 })
 
 pdf_detail = PDFListAPI.as_view({
-	'get':'details',
+	'get':'put',
 	'post':'edit'
 })
 
@@ -46,13 +45,15 @@ author_detail = AuthorAPI.as_view({
 })
 
 urlpatterns = [
-	path('pdflist', pdf, name='pdflist'),
-	path('courselist', course, name='courselist'),
-	path('departmentlist', department, name='deplist'),
-	path('authorlist', author, name='authorlist'),
+	path('pdf/', pdf, name='pdflist'),
+	path('course/', course, name='courselist'),
+	path('department/', department, name='deplist'),
+	path('author/', author, name='authorlist'),
 	#details
- 	path('pdfdetail', pdf_detail, name='pdfdetail'),
- 	path('coursedetail', course_detail, name='coursedetail'),
-	path('departmentdetail', department_detail, name='depdetail'),
-	path('authordetail', author_detail, name='authordetail'),
+ 	path('pdf/<int:pk>/', pdf_detail, name='pdfdetail'),
+ 	path('course/<int:pk>/', course_detail, name='coursedetail'),
+	path('department/<int:pk>/', department_detail, name='depdetail'),
+	path('author/<int:pk>/', author_detail, name='authordetail'),
+	#edit
+ 
 	]

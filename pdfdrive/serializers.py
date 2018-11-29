@@ -14,7 +14,7 @@ from rest_framework.serializers import (
 
 
 class pdfdriveserializer(serializers.ModelSerializer):
-    date_display = serializers.SerializerMethodField()
+    date_uplaod = serializers.SerializerMethodField()
     timesince = serializers.SerializerMethodField()
     author_name = serializers.SerializerMethodField()
     
@@ -26,18 +26,35 @@ class pdfdriveserializer(serializers.ModelSerializer):
                   'author',
                   'author_name',
                   'file',
-                  'date_display',
+                  'date_uplaod',
                   'timesince',
                   ]
 
     def get_author_name(self,instance):
        return instance.author.lastname
 
-    def get_date_display(self, instance):
+    def get_date_uplaod(self, instance):
         return instance.date_uploaded.strftime("%b %d, %Y | at %I:%M %p")
 
     def get_timesince(self, instance):
         return timesince(instance.modified) + " ago"   
+#Edit
+class PdfDriveEditSerializer(serializers.Serializer):
+
+    title = serializers.CharField(max_length=100)
+    description = serializers.CharField(max_length=200)
+    author = serializers.CharField(max_length=150)
+    file = serializers.FileField(max_length=100)
+    
+    def update(self, validated_data, instance):
+
+        instance.title = validated_data.get('title')
+        instance.description = validated_data.get('description')
+        instance.author = validated_data.get('author')
+        instance.file = validated_data.get('file')
+        instance.save()
+        return instance()
+
 
 class CourseSerializer(serializers.ModelSerializer):
     date_display = serializers.SerializerMethodField()
