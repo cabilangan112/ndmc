@@ -11,7 +11,7 @@ pdf = PDFListAPI.as_view({
 
 pdf_detail = PDFListAPI.as_view({
 	'get':'put',
-	'post':'edit'
+	'get':'retrieve'
 })
 
 course = CourseAPI.as_view({

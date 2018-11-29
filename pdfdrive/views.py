@@ -36,22 +36,17 @@ class PDFListAPI(ViewSet):
         except Post.DoesNotExist:
             raise Http404
 
-    def edit(self, request,   format=None):
-        serializer = pdfdriveserializer(data=request.data)
-        if serializer.is_valid():
-            post = serializer.save()
-            for author in request.data.get('authors'):
-                a = Author.objects.get(id=author)
-                post.authors.add(a)
-                import pdb; pdb.set_trace()
-            return Response(serializer.data)
-        return Response(serializer.errors )
+    def retrieve(self, request, pk=None):
+        queryset = Post.objects.all()
+        post = get_object_or_404(queryset,pk=pk)
+        serializer = PdfDriveEditSerializer(post)
+        return Response(serializer.data)
 
     def put(self, request, pk=None):
         queryset = Post.objects.all()
         post = get_object_or_404(queryset, pk=pk)
         serializer_context = {'request': request,}
-        serializer = pdfdriveserializer(post, context=serializer_context)
+        serializer = PdfDriveEditSerializer(post, context=serializer_context)
         return Response(serializer.data)
 
 
