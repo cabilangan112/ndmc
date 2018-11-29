@@ -1,6 +1,6 @@
-# Alumni Tracer and PDF drive App
+# Alumni Tracer and PDF Drive App
 
-AluTracer and PDF drive app using Django Rest Framework and jQuery for NDMC
+AluTracer and PDF Drive app using Django Rest Framework and jQuery for NDMC
 
 # Stack
 
