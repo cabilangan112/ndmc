@@ -1,7 +1,8 @@
 from rest_framework import serializers
-from rest_framework.compat import authenticate
-from .models import User, Confirmation
+from django.contrib.auth.models import User
 from rest_framework.validators import UniqueValidator
+from .models import Confirmation
+
 
 class UserAuthSerializer(serializers.Serializer):
     email = serializers.EmailField()
