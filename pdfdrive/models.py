@@ -38,7 +38,7 @@ class Course(models.Model):
     
     def __str__(self):
         return '{}'.format(self.course_code)
-
+ss
     class Meta:
         ordering = ['-date_created']
 
