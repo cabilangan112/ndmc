@@ -32,5 +32,5 @@ urlpatterns = [
     path('login/', user_login, name='login'),
     path('gethash/', user_get_hash, name='get_hash'),
     path('reset/<str:hash>/', user_changepass, name='changepass'),
-    path('<str:handle>/', user_details, name='details'),
+    path('<str:lastname>/', user_details, name='details'),
 ]

@@ -19,6 +19,11 @@ from .serializers import (
 from .models import User, Confirmation
 from django.conf import settings
 
+
+class Home(TemplateView):
+    template_name = 'home.html'
+ 
+
 class GuestAPI(ViewSet):
     """Guest API"""
  
@@ -76,18 +81,17 @@ class UserAPI(ViewSet):
             return Response(status=200)
         return Response(status=404)
 
-    def details(self, *args, **kwargs):
+    def details(self, last_name, *args, **kwargs):
         """view details of a user
-        """
-        handle = self.kwargs.get('handle', None)
-        instance = User.objects.get(handle=handle)
+        """ 
+        instance = User.objects.get(last_name=last_name)
         serializer = UserDetailSerializer(instance)
         return Response(serializer.data, status=200)
 
     def edit(self, *args, **kwargs):
         """Edit details of a user"""
-        handle = self.request.user.handle
-        instance = User.objects.get(handle=handle)
+        handle = self.request.user.lastname
+        instance = User.objects.get(lastname=lastname)
 
         serializer = UserEditSerializer(
             data=self.request.data, 

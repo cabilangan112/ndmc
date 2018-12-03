@@ -53,7 +53,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
     """Serializer of a user's details"""
     class Meta:
         model = User
-        fields = ['email', 'first_name', 'last_name', 'handle', 'date_joined']
+        fields = ['email', 'first_name', 'last_name', 'date_joined']
 
 class UserEditSerializer(serializers.Serializer):
     """Serializer when editing a user"""
