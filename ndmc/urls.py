@@ -25,7 +25,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page=reverse_lazy('login')), name='logout'),
     path('oauth', include('social_django.urls', namespace='social')),
     #App Urls
-    path('pdfdrive/', include('pdfdrive.urls', namespace='pdf')),
+    path('pdfdrive/', include('pdfdrive.urls', namespace='pdfdrive')),
     path('alutracer/', include('alutracer.urls', namespace='alutracer')),
     path('user/', include('account.urls', namespace='user'))
 ]

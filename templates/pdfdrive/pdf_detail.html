@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			PDF-Drive
+		</title> 
+	</head>
+	{% block content %} 
+		<body style="margin-left:200px;">
+			{% if post %}
+				<div>
+					<p>{{ post.title }}</p> 
+					<p>{{ post.description }}</p>
+		  	</div>
+			{% else %}
+				<p>Emplty Reaserch</p>
+			{% endif %}
+		</body>
+	{% endblock %}
+</html>	

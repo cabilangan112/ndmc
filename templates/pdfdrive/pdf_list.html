@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			PDF-Drive
+		</title> 
+	</head>
+	{% block content %} 
+		<body style="margin-left:200px;">
+			{% if post %}
+				<div>
+					{% for post in post %}
+						<a href='{% url "pdfdrive:detail" post.title%}'   role="button" >{{ post.title }}</a> 
+						<p>{{ post.description }}</p>
+					{% endfor %}
+		  	</div>
+			{% else %}
+				<p>Emplty Reaserch</p>
+			{% endif %}
+		</body>
+	{% endblock %}
+</html>
