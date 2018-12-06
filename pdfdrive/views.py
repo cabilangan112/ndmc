@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 from .models import Post,Department,Author, Course
 from .forms import PostForm,DepartmentForm,CourseForm,AuthorForm
 
-class PostView(LoginRequiredMixin,View):
+class PostView(View):
     def get(self, request, *args, **kwargs):
         post = Post.objects.all()
         context = {'post':post,}
@@ -19,16 +19,4 @@ class PostDetailView(View):
         context = {'post':post,}
         return render(request, "pdfdrive/pdf_detail.html", context)
 
-class UploadPost(View):
-    def get(self, request):
-        post_list = Post.objects.all()
-        return render(self.request, 'pdfdrive/upload.html', {'post': post_list})
-
-    def post(self, request):
-        form = PhotoForm(self.request.POST, self.request.FILES)
-        if form.is_valid():
-            photo = form.save()
-            data = {'is_valid': True, 'name': post.file.name, 'url': post.file.url}
-        else:
-            data = {'is_valid': False}
-        return JsonResponse(data)
+ 
