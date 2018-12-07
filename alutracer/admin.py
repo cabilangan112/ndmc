@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Course, Choice, Index, PersonalInformation, Question
+from .models import Course, Choice, Index, Thumbnail, Parallax, PersonalInformation, Question
 
 # Register your models here.
 
@@ -19,5 +19,7 @@ class QuestionAdmin(admin.ModelAdmin):
 admin.site.register(Course)
 admin.site.register(Choice)
 admin.site.register(Index)
+admin.site.register(Thumbnail)
+admin.site.register(Parallax)
 admin.site.register(PersonalInformation)
 admin.site.register(Question, QuestionAdmin)
