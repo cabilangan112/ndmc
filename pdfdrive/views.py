@@ -11,12 +11,12 @@ class PostView(View):
     def get(self, request, *args, **kwargs):
         post = Post.objects.all()
         context = {'post':post,}
-        return render(request, "pdfdrive/pdf_list.html", context)
+        return render(request, "templates/pdf_list.html", context)
 
 class PostDetailView(View):
     def get(self, request, title, *args, **kwargs):
         post = get_object_or_404(Post, title=title)
         context = {'post':post,}
-        return render(request, "pdfdrive/pdf_detail.html", context)
+        return render(request, "pdf_detail.html", context)
 
  
