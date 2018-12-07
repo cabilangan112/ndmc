@@ -1,7 +1,10 @@
- body {
-  padding-top: 50px;
+body,html,.row-offcanvas {
+  height:100%;
 }
 
+body {
+  padding-top: 50px;
+}
 #sidebar {
   width: inherit;
   min-width: 220px;
