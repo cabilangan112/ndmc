@@ -22,7 +22,6 @@ from django.conf import settings
 
 class Home(TemplateView):
     template_name = 'home.html'
- 
 
 class GuestAPI(ViewSet):
     """Guest API"""
@@ -63,7 +62,7 @@ class GuestAPI(ViewSet):
             from_email = settings.EMAIL_HOST_USER
             to_email = serializer.validated_data['email']
             url = serializer.save()
-            text_content = f"{self.request.get_host()}{url}"
+            # text_content = f"{self.request.get_host()}{url}"
             send_mail(subject, text_content, from_email, [to_email])
             return Response(status=200)
         return Response(status=400)

@@ -1,6 +1,12 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views import View
+from .models import Index
 # Create your views here.
 
-class Home(TemplateView):
-    template_name = 'home.html'
+class HomeView(View):
+    def get(self, request, *args, **kwargs):
+        index = Index.objects.all()[:3]
+        context = {
+            'index': index,
+        }
+        return render(request, 'home.html', context)
