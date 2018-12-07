@@ -18,22 +18,11 @@ CIVIL_STATUS = (
     ('Married', 'Married')
 )
 
-class Home(models.Model):
+class Index(models.Model):
     user                                = models.ForeignKey(User, on_delete = models.CASCADE)
     cover_photo                         = models.ImageField(upload_to = 'media')
     title                               = models.CharField(max_length = 255)
     description                         = models.TextField()
-    content_heading                     = models.CharField(max_length=255)
-    content_description                 = models.TextField()
-    parallax_1                          = models.ImageField(upload_to='media')
-    parallax_1_heading_content          = models.CharField(max_length=255)
-    parallax_1_content                  = models.TextField()
-    parallax_2                          = models.ImageField(upload_to='media')
-    parallax_2_heading_content          = models.CharField(max_length=255)
-    parallax_2_content                  = models.TextField()
-    thumbnail                           = models.ImageField(upload_to='media')
-    footer_heading                      = models.CharField(max_length=255)
-    footer_content                      = models.TextField()
     date_created                        = models.DateTimeField(auto_now_add = True)
     date_modified                       = models.DateTimeField(auto_now = True)
     slug                                = models.SlugField(null=True, blank=True)
@@ -44,6 +33,45 @@ class Home(models.Model):
     @property
     def slug_title(self):
         return '{}'.format(self.title)
+
+    class Meta:
+        ordering = ['-id']
+
+class Parallax(models.Model):
+    user                                = models.ForeignKey(User, on_delete = models.CASCADE)
+    parallax_1                          = models.ImageField(upload_to='media')
+    parallax_1_heading                  = models.CharField(max_length=255)
+    parallax_1_content                  = models.TextField()
+    parallax_2                          = models.ImageField(upload_to='media')
+    parallax_2_heading                  = models.CharField(max_length=255)
+    parallax_2_content                  = models.TextField()
+    date_created                        = models.DateTimeField(auto_now_add = True)
+    date_modified                       = models.DateTimeField(auto_now = True)
+    slug                                = models.SlugField(null=True, blank=True)
+
+    def __str__(self):
+        return '{}'.format(self.parallax_1_heading_content)
+
+    @property
+    def slug_title(self):
+        return '{}'.format(self.parallax_1_heading_content)
+
+    class Meta:
+        ordering = ['-id']
+
+class Thumbnail(models.Model):
+    user                                = models.ForeignKey(User, on_delete = models.CASCADE)
+    thumbnail                           = models.ImageField(upload_to='media')
+    date_created                        = models.DateTimeField(auto_now_add = True)
+    date_modified                       = models.DateTimeField(auto_now = True)
+    slug                                = models.SlugField(null=True, blank=True)
+
+    def __str__(self):
+        return '{}'.format(self.user)
+
+    @property
+    def slug_title(self):
+        return '{}'.format(self.user)
 
     class Meta:
         ordering = ['-id']
@@ -139,7 +167,7 @@ def rl_pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = unique_slug_generator(instance)
 
-pre_save.connect(rl_pre_save_receiver, sender=Home)
+pre_save.connect(rl_pre_save_receiver, sender=Index)
 pre_save.connect(rl_pre_save_receiver, sender=Question)
 pre_save.connect(rl_pre_save_receiver, sender=Course)
 pre_save.connect(rl_pre_save_receiver, sender=PersonalInformation)

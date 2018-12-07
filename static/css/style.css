@@ -6,6 +6,7 @@ a, a:hover, a:focus {
 }
 .navbars {
     padding: 15px 10px;
+    margin-left: 0px;
     background: #fff;
     border: none;
     border-radius: 0;
@@ -29,13 +30,13 @@ a, a:hover, a:focus {
 ----------------------------------------------------- */
 .wrapper {
     position: fixed;
-    margin-top: 40px;
     display: flex;
     align-items: stretch;
     perspective: 1500px;
-    height:560px;
+    height:565px;
 }
 #sidebar {
+    margin-right: 0px;
     min-width: 300px;
     max-width: 300px;
     background: #7386D5;
@@ -123,6 +124,7 @@ a.article, a.article:hover {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
+    left: 0;
 }
 
 #sidebarCollapse {
