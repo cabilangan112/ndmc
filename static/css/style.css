@@ -120,8 +120,7 @@ a.article, a.article:hover {
     CONTENT STYLE
 ----------------------------------------------------- */
 #content {
-    margin-left:20px;
-    padding-top:20px;
+    padding :10px;
     min-height: 100vh;
     transition: all 0.3s;
     left: 0;
