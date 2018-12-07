@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-  <head>
   {% block content %} 
+    <link type="text/css" rel="stylesheet" href="{% static 'css/pdf.css' %}">
     <div class="row-offcanvas row-offcanvas-left">
       <div id="sidebar" class="sidebar-offcanvas">
         <div class="col-md-12">
@@ -30,5 +28,4 @@
       </div>
     </div>  
   {% endblock %}
-</html> 
  

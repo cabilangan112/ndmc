@@ -1,13 +1,10 @@
-body,html,.row-offcanvas {
-  height:100%;
-}
-body {
+ body {
   padding-top: 50px;
 }
 #sidebar {
   width: inherit;
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 220px;
+  max-width: 220px;
   background-color:#f5f5f5;
   float: left;
   height:100%;
