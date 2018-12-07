@@ -46,13 +46,13 @@ class PdfDriveEditSerializer(serializers.Serializer):
     author = serializers.CharField(max_length=150)
     file = serializers.FileField(max_length=100)
     
-    def update(self, validated_data, instance):
+    def update(self, validated_data, post):
 
-        instance.title = validated_data.get('title')
-        instance.description = validated_data.get('description')
-        instance.author = validated_data.get('author')
-        instance.file = validated_data.get('file')
-        instance.save()
+        post.title = validated_data.get('title')
+        post.description = validated_data.get('description')
+        post.author = validated_data.get('author')
+        post.file = validated_data.get('file')
+        post.save()
         return instance()
 
 

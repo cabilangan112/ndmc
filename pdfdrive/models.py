@@ -61,21 +61,22 @@ class Author(models.Model):
     middlename         = models.CharField(max_length=100)
     department         = models.ForeignKey(Department, null=True,on_delete=models.CASCADE)
     course             = models.ForeignKey(Course, null=True,on_delete=models.CASCADE)
-    year               = models.CharField(max_length=6, choices=YEAR, blank=True, default=True)
+    Year               = models.CharField(max_length=6, choices=YEAR, blank=True, default=True)
  
     def __str__(self):
-        return '{}'.format(self.lastname,self.firstname)
+        return '{}'.format(self.lastname)
 
     class Meta:
         ordering = ['-id']
 
 class Post(models.Model):
     title          = models.CharField(max_length=100)
+    cover          = models.FileField(upload_to="cover", null=True)
     description    = models.TextField(null=True, blank=True)
     author         = models.ForeignKey(Author, null=True,on_delete=models.CASCADE)
-    file           = models.FileField(upload_to="pdf", null=True)
     date_uploaded  = models.DateTimeField(auto_now_add=True)
     modified       = models.DateTimeField(auto_now=True)
+    file           = models.FileField(upload_to="pdf", null=True,validators=[PathAndRename])
 
     def __str__(self):
         return '{}'.format(self.title)
