@@ -5,41 +5,23 @@
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-    <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
+      {% for id in index %}
+        <li data-target="#myCarousel" data-slide-to="{{ id.id }}" class="{% if forloop.first %} active {% endif %}"></li>
+      {% endfor %}
     </ol>
     <div class="carousel-inner" role="listbox">
-      <div class="item">
-        <img class="first-slide" src="http://ndmc.edu.ph/sites/default/files/styles/1366x768/public/1.jpg?itok=08Ax7mYc" alt="First slide">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Example headline.</h1>
-            <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-            <p><a class="btn animated-button thar-four" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Sign up</a></p>
+      {% for post in index %}
+        <div class="item">
+          <img class="first-slide" src="{{ MEDIA_URL }}{{ post.cover_photo.url }}" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>{{ post.title }}</h1>
+              <p>{{ post.description }}</p>
+              <p><a class="btn animated-button thar-four" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Sign up</a></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="item active">
-        <img class="second-slide" src="http://www.ndmc.edu.ph/sites/default/files/styles/1366x768/public/4_0.jpg?itok=UmmyPDsi" alt="Second slide">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn animated-button thar-four" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Sign up</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <img class="third-slide" src="http://ndmc.edu.ph/sites/default/files/styles/1366x768/public/2.jpg?itok=Ok0fjtkU" alt="Third slide">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>One more for good measure.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn animated-button thar-four" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Sign up</a></p>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
     <a class="left carousel-control" href="https://getbootstrap.com/docs/3.3/examples/carousel/#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -50,47 +32,33 @@
       <span class="sr-only">Next</span>
     </a>
   </div><!-- /.carousel -->
-  
-
   <!-- Start card -->
   <div class="container fade-up fade-ani fade">
     <hr class="featurette-divider">
     <div class="row">
-      <div class="col-lg-4">
-        <h2>Safari bug warning!</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <button type="button" class="btn button btn-sign-in">
-          <span>View Details</span>
-        </button>
-      </div>
-      <div class="col-lg-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <button type="button" class="btn button btn-sign-in">
-          <span>View Details</span>
-        </button>
-      </div>
-      <div class="col-lg-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-        <button type="button" class="btn button btn-sign-in">
-          <span>View Details</span>
-        </button>
-      </div>
+      {% for card in pdf_list %}
+        <div class="col-lg-4">
+          <h2>{{ card.title }}</h2>
+          <p>{{ card.description }}</p>
+          <button type="button" class="btn button btn-sign-in">
+            <span>View Details</span>
+          </button>
+        </div>
+      {% endfor %}
     </div>
     <hr class="featurette-divider">
-  </div>
-  <!-- End card -->
-
+  </div><!-- End card -->
   <!-- Start Parallax -->
-  <div class="parallax fade-down fade-ani fade">
-    <div class="container">
-      <div class="parallax-caption float-right">
-        <h1>Example headline.</h1>
-        <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+  {% for parallx in parallax %}
+    <div class="parallax fade-down fade-ani fade" style="background-image: url({{ MEDIA_URL }}{{ parallx.parallax_1.url }});">
+      <div class="container">
+        <div class="parallax-caption float-right">
+          <h1>{{ parallx.parallax_1_heading }}</h1>
+          <p>{{ parallx.parallax_1_content}}</p>
+        </div>
       </div>
     </div>
-  </div>
+  {% endfor %}
   <!-- Start Thumbnail -->
   <div class="container sectional-wrapper fade-right fade-ani fade" >
     <div class="row" >
@@ -100,30 +68,16 @@
                <div class="col-md-12 pagingBorder" >
                   <div id="theImageGrid" >
                     <ul class="row imagegrid" id="imagegrid" >
-                      <li class="col-xs-12 col-sm-6 col-md-4" id="22" >
-                        <div class="imgHolder" >
-                          <div class="fauxCrop" >
-                            <a href="" ><img src="http://www.ndmc.edu.ph/sites/default/files/styles/1366x768/public/4_0.jpg?itok=UmmyPDsi" class="grid-image img-responsive" ></a>
+                      {% for thumbn in thumbnail %}
+                        <li class="col-xs-12 col-sm-6 col-md-4" id="22" >
+                          <div class="imgHolder" >
+                            <div class="fauxCrop" >
+                              <a href="" ><img src="{{ MEDIA_URL }}{{ thumbn.thumbnail.url }}" ></a>
+                            </div>
                           </div>
-                        </div>
-                        <div class="clearfix" ></div>
-                      </li>
-                      <li class="col-xs-12 col-sm-6 col-md-4" id="105" >
-                        <div class="imgHolder" >
-                          <div class="fauxCrop" >
-                            <a href="" ><img src="http://ndmc.edu.ph/sites/default/files/styles/1366x768/public/2.jpg?itok=Ok0fjtkU"></a>
-                          </div>
-                        </div>
-                        <div class="clearfix" ></div>
-                      </li>
-                      <li class="col-xs-12 col-sm-6 col-md-4" id="106" >
-                        <div class="imgHolder" >
-                          <div class="fauxCrop" >
-                            <a href="" ><img src="http://ndmc.edu.ph/sites/default/files/styles/1366x768/public/1.jpg?itok=08Ax7mYc" class="grid-image img-responsive" ></a>
-                          </div>
-                        </div>
-                        <div class="clearfix" ></div>
-                      </li>
+                          <div class="clearfix" ></div>
+                        </li>
+                      {% endfor %}
                     </ul>
                   </div>
                 </div>
@@ -133,16 +87,15 @@
         </div>
       </div>
     </div>
-  </div>
-  <!-- End Thumbnail -->
-  <div class="parallax1 fade-left fade-ani fade">
-    <div class="container">
-      <div class="parallax-caption center">
-        <h2>Multiple Backgrounds</h2>
-        <p>The multiple backgrounds applied to this section are moved in a similar way to the first section -- every time the user scrolls down the page by a pixel, the positions of the backgrounds are changed.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nibh erat, sagittis sit amet congue at, aliquam eu libero. Integer molestie, turpis vel ultrices facilisis, nisi mauris sollicitudin mauris, volutpat elementum enim urna eget odio. Donec egestas aliquet facilisis. Nunc eu nunc eget neque ornare fringilla. Nam vel sodales lectus. Nulla in pellentesque eros. Donec ultricies, enim vitae varius cursus, risus mauris iaculis neque, euismod sollicitudin metus erat vitae sapien. Sed pulvinar.</p>
+  </div><!-- End Thumbnail -->
+  {% for parallx in parallax %}
+    <div class="parallax1 fade-left fade-ani fade" style="background-image: url({{ MEDIA_URL }}{{ parallx.parallax_2.url }});">
+      <div class="container">
+        <div class="parallax-caption center">
+          <h2>{{ parallx.parallax_2_heading}}</h2>
+          <p>{{ parallx.parallax_2_content}}</p>
+        </div>
       </div>
-    </div>
-  </div>
-  <!-- End Parallax -->
+    </div><!-- End Parallax -->
+  {% endfor %}
 {% endblock content %}

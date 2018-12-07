@@ -17,7 +17,7 @@ class Confirmation(models.Model):
     is_used = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.id}"
+        return '{}'.format(self.id)
 
     def save(self, *args, **kwargs):
         self.url = reverse('users:changepass', args={str(self.id)})

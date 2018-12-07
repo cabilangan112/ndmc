@@ -13,9 +13,6 @@
 }
 
 .parallax1 {
-  /* The image used */
-  background-image: url(http://ndmc.edu.ph/sites/default/files/styles/1366x768/public/2.jpg?itok=Ok0fjtkU);
-
   /* Set a specific height */
   min-height: 480px; 
 
@@ -28,9 +25,6 @@
 }
 
 .parallax {
-  /* The image used */
-  background-image: url(http://ndmc.edu.ph/sites/default/files/styles/1366x768/public/1.jpg?itok=08Ax7mYc);
-
   /* Set a specific height */
   min-height: 480px; 
 
