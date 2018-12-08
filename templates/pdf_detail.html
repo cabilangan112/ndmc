@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/pdf.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>
@@ -74,9 +75,13 @@
            </div>
         </div>
       </nav>
-  <h2>Collapsible Sidebar Using Bootstrap 3</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      
+      <div class=pdf>
+              <embed   
+              src="{{post.file.url}}" 
+              width="" height="380" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" 
+              background-color="0xFF525659" top-toolbar-height="220" full-frame="200" internalinstanceid="2100" >
+            </div>
     </div>
   </div>
 </body>  
