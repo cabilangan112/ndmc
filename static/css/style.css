@@ -36,7 +36,7 @@ a, a:hover, a:focus {
     height:100%;
 }
 #sidebar {
-    padding-top: 40px;
+    margin-top:  40px;
     margin-right: 0px;
     min-width: 260px;
     max-width: 260px;
