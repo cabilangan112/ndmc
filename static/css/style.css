@@ -1,10 +1,14 @@
-
+.title{
+    text-align: center;
+}
 a, a:hover, a:focus {
     color: inherit;
     text-decoration: none;
     transition: all 0.3s;
 }
-.navbars {
+.navbars {`
+    position: relative;
+ 
     padding: 10px 10px;
     background: #fff;
     border: none;
@@ -12,11 +16,13 @@ a, a:hover, a:focus {
     margin-bottom: 40px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
-
+.nav{
+  margin-left: 20px;
+}
 .navbars-btn {
     box-shadow: none;
     outline: none !important;
-}   
+}  
 .line {
     width: 100%;
     height: 1px;
@@ -31,10 +37,11 @@ a, a:hover, a:focus {
     position: fixed;
     display: flex;
     align-items: stretch;
-    perspective: 1500px;
-    height:565px;
+    perspective: 1000px;
+    height:100%;
 }
 #sidebar {
+ 
     margin-right: 0px;
     min-width: 260px;
     max-width: 260px;
@@ -54,6 +61,7 @@ a, a:hover, a:focus {
     background: #6d7fcc;
 }
 
+ 
 #sidebar ul.components {
     padding: 20px 0;
     border-bottom: 1px solid #47748b;
@@ -192,5 +200,10 @@ a.article, a.article:hover {
     #sidebarCollapse.active span:last-of-type {
         transform: rotate(-45deg) translate(1px, -1px);
     }
-
+ 
+  }
+ 
+ 
+form{
+  text-align: center;
 }
