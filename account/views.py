@@ -19,10 +19,6 @@ from .serializers import (
 from .models import User, Confirmation
 from django.conf import settings
 
-
-class Home(TemplateView):
-    template_name = 'home.html'
-
 class GuestAPI(ViewSet):
     """Guest API"""
  
