@@ -2,13 +2,8 @@
 {% load staticfiles %}
 {% block content %} 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/pdf.css' %}">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
-<body>
 <div class="wrapper">
   <nav id="sidebar">
     <div class="sidebar-header">
@@ -41,10 +36,11 @@
         </li>
     </ul>
     <ul class="list-unstyled CTAs">
-      <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
-      <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
+      <li><a href="" class="download">Download Research</a></li>
+      <li><a href="" class="article">Back to article</a></li>
     </ul>
   </nav>
+  <div class="container">
     <div id="content">
       <nav class="navbars navbar-default">
         <div class="container-fluid">
@@ -61,8 +57,8 @@
               <span class="icon-bar"></span>
             </button>
           </div>
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <div class="search">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <div class="search">
                 <form class="navbar-form">
                   <div class="form-group" >
                     <div class="input-group">
@@ -74,15 +70,12 @@
               </div>
            </div>
         </div>
-      </nav>
-      
-      <div class=pdf>
-              <embed   
-              src="{{post.file.url}}" 
-              width="" height="380" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" 
-              background-color="0xFF525659" top-toolbar-height="220" full-frame="200" internalinstanceid="2100" >
-            </div>
+      </nav>         
+      <embed src="{{post.file.url}}" width="100%" height="480" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" background-color="0xFF525659"top-toolbar-height="220" full-frame="200" internalinstanceid="2100">
+    </div>
+      <div class="line"></div>
     </div>
   </div>
-</body>  
+</div>
+ 
 {% endblock %}
