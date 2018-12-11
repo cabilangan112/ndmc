@@ -108,7 +108,6 @@ a[aria-expanded="true"]::before {
     content: '\e260';
 }
 
-
 ul.CTAs {
     padding: 20px;
 }
