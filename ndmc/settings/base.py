@@ -111,6 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTHENTICATION_BACKENDS = (
+    'social_core.backends.twitter.TwitterOAuth',
     'social_core.backends.google.GooglePlusAuth',
     'social_core.backends.open_id.OpenIdAuth',
     'social_core.backends.google.GoogleOpenId',  
