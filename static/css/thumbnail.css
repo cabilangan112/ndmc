@@ -4,7 +4,6 @@
   min-height: 200px;
   position: relative;
 }
-
 .imagegrid .fauxCrop:hover{
   -moz-transform: rotate(2deg);
   -webkit-transform: rotate(2deg);
@@ -12,11 +11,9 @@
   -ms-transform: rotate(2deg);
   transform: rotate(2deg);
 }
-
 .imagegrid li .imgHolder {
   overflow: visible; 
 }
-
 .fauxCrop{
   height:200px;
   overflow:hidden;
@@ -28,12 +25,10 @@
   -moz-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-
 .imagegrid li {
   padding: 20px;
   list-style-type: none;
 }
-
 #theImageGrid{
   margin-top: 15px;
 }
