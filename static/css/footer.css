@@ -11,7 +11,6 @@
   -ms-transition: all 1s ease;
   transition: all 1s ease;
 }
-
 .footer #button:hover{
   width:35px;
   height:35px;
@@ -23,7 +22,6 @@
   transition: all 1s ease;
   position:relative;
 }
-
 .footer {
   bottom:0;
   left:0;
@@ -39,7 +37,6 @@
   transition: all 1s ease;
   z-index:999;
 }
-
 .footer:hover {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -48,7 +45,6 @@
   transition: all 1s ease;
   height: 10em;
 }
-
 .footer #container{
   margin-top:5px;
   width:100%;
@@ -59,7 +55,6 @@
   background: #003200;
   color: #f2ef5f;
 }
-
 .footer #cont{
   position:relative;
   top:-45px;
@@ -68,24 +63,20 @@
   height:auto;
   margin:0 auto;
 }
-
 .footer_center{
   width: 500px;
   float: left;
   text-align: left;
   margin-top: -155px;
 }
-
 .footer h3{
   margin-top:70px;
   margin-left:40px;
 }
-
 .footer p{
   margin-top: -10px;
   margin-left:40px;
 }
-
 .footer-logo{
   height: 100px;
   width: 100px;

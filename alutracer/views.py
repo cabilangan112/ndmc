@@ -34,10 +34,10 @@ class PersonalInfoDetailView(View):
         }
         return render(request, 'alutracer/alu-detail.html', context)
 
-class PersonalInfoCreateView(LoginRequiredMixin ,View):
+class PersonalInfoCreateView(View):
     form_class = PersonalInformationForm
     initial = {'key':'value'}
-    template_name = 'template/alu-form.html'
+    template_name = 'alutracer/alu-form.html'
 
     def get(self, request, *args, **kwargs):
         form = self.form_class(initial=self.initial)

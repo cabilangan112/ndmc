@@ -7,7 +7,7 @@ from .views import (
 app_name='alutracer'
 
 urlpatterns = [
-    path('new/', PersonalInfoCreateView.as_view(), name='personal-info-create'),
+    path('create/', PersonalInfoCreateView.as_view(), name='personal-info-create'),
     path('<slug:slug>/', PersonalInfoDetailView.as_view(), name='personal-info-detail'),
     # path('course', course_list, name='course-list'),
     # path('choice', choice_list, name='choice-list'),

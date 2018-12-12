@@ -1,5 +1,4 @@
 /* Global Button Styles */
-
 a.animated-button:link, a.animated-button:visited {
   position: relative;
   display: block;
@@ -20,7 +19,6 @@ a.animated-button:link, a.animated-button:visited {
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
-
 a.animated-button:link:after, a.animated-button:visited:after {
   content: "";
   position: absolute;
@@ -34,16 +32,13 @@ a.animated-button:link:after, a.animated-button:visited:after {
   -o-transition: all 0.75s ease 0s;
   transition: all 0.75s ease 0s;
 }
-
 a.animated-button:link:hover, a.animated-button:visited:hover {
   color: #FFF;
   text-shadow: none;
 }
-
 a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
   height: 450%;
 }
-
 a.animated-button:link, a.animated-button:visited {
   position: relative;
   display: block;
@@ -64,10 +59,7 @@ a.animated-button:link, a.animated-button:visited {
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
-
-
 /* Thar Buttons */
-
 a.animated-button.thar-four {
   color: #fff;
   cursor: pointer;
@@ -78,19 +70,16 @@ a.animated-button.thar-four {
   0s;
   width: 50%;
 }
-
 a.animated-button.thar-four:hover {
   color: #000 !important;
   background-color: transparent;
   text-shadow: nfour;
 }
-
 a.animated-button.thar-four:hover:before {
   right: 0%;
   left: auto;
   width: 100%;
 }
-
 a.animated-button.thar-four:before {
   display: block;
   position: absolute;
