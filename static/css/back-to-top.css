@@ -7,7 +7,6 @@ Primary style
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-
 .cd-top {
   display: inline-block;
   height: 40px;
@@ -28,11 +27,9 @@ Primary style
   transition: opacity .3s 0s, visibility 0s .3s, background-color .3s 0s;
   border-radius: 10px;
 }
-
 .cd-top-layout{
   border-radius: 10px;
 }
-
 .cd-top.cd-top--show,
 .cd-top.cd-top--fade-out,
 .cd-top:hover {
@@ -45,24 +42,20 @@ Primary style
   visibility: visible;
   opacity: 1;
 }
-
 .cd-top.cd-top--fade-out {
   /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
   opacity: .5;
 }
-
 .cd-top:hover {
   background-color: #003200;
   opacity: 1;
 }
-
 @media only screen and (min-width: 768px) {
   .cd-top {
     right: 20px;
     bottom: 20px;
   }
 }
-
 @media only screen and (min-width: 1024px) {
   .cd-top {
     height: 60px;
