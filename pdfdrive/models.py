@@ -5,6 +5,13 @@ from .validators import validate_file_extention
 from django.urls import reverse
 User = settings.AUTH_USER_MODEL
 
+YEAR = (
+    ('1st', 'Firs Year'),
+    ('2nd', 'Second Year'),
+    ('3rd', 'Third Year'),
+    ('4rt', 'Fourth Year'),
+)
+
 def upload_location(instance, filename):
     return "%s/%s" %(instance.id, filename)
 
@@ -23,12 +30,6 @@ class PathAndRename(object):
         return os.path.join(self.path, filename)
 path_and_rename = PathAndRename("media/file/")
 
-YEAR = (
-    ('1st', '1st'),
-    ('2nd', '2nd'),
-    ('3rd', '3rd'),
-    ('4rt', '4rt'),
-)
 
 class Course(models.Model):
     course_code        = models.CharField(max_length=100)
