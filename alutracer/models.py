@@ -130,7 +130,7 @@ class PersonalInformation(models.Model):
                                                             max_length = 6,
                                                             choices = GENDER
                                                         )
-    date_of_birth                       = models.DateTimeField()
+    date_of_birth                       = models.DateField()
     civil_status                        = models.CharField(
                                                         max_length = 10,
                                                         choices = CIVIL_STATUS

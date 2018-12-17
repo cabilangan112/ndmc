@@ -11,6 +11,7 @@ class PersonalInformationForm(forms.ModelForm):
             'last_name',
             'first_name',
             'middle_name',
+            'gender',
             'date_of_birth',
             'civil_status',
             'age',
@@ -19,5 +20,4 @@ class PersonalInformationForm(forms.ModelForm):
             'country',
             'social_media_account',
             'mobile_number'
-
         ]

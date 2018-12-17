@@ -13,6 +13,7 @@ body {
   padding: 0 15px;
   min-height: 568px;
   background-color: white;
+  margin:7% 22%;
 }
 @media (min-width: 768px) {
   #page-wrapper {
@@ -432,40 +433,23 @@ table.dataTable thead .sorting:after {
     border-left-width: 0;
   }
 }
+.ndmc-logo > img {
+  border-radius: 50%;
+  margin-bottom: 15px;
+  width: 100px;
+  height: 100px;
+}
 #page-wrapper {
-  margin: 7% 20%;
+  margin: 7% 22%;
 }
 .page-header  > p{
   margin-left: 150px;
   margin-top: -95px;
 }
-@media all and (min-width: 1000px) {
-  #page-wrapper {
-    margin: 7% 20%;
+@media all and (min-width: 1200px){
+  .page-header  > p{
+    margin-left: 150px;
+    margin-top: -95px;
+    font-size: 10px;
   }
-}
-@media all and (min-width: 920px)  {
-  #page-wrapper {
-    margin: 7% 15%;
-  }
-}
-@media all and (min-width: 700px)  { 
-  #page-wrapper {
-    margin: 7% 12%;
-  }
- }
-@media all and (min-width: 400px)  {
-  #page-wrapper {
-    margin: 7% 10%;
-  }
-}
-@media all and (min-width: 300px)  {  
-  #page-wrapper {
-    margin: 7% 8%;
-  }
-}
-.ndmc-logo > img {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
 }
