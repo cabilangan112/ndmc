@@ -36,12 +36,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'account',
     'alutracer',
     'pdfdrive',
     'social_django',
     'rest_framework',
  
+=======
+>>>>>>> ff09a163fb43c3890afadb7583916f9f7ca0c764
 ]
 
 MIDDLEWARE = [

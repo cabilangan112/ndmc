@@ -36,12 +36,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'account',
     'alutracer',
     'pdfdrive',
     'social_django',
     'rest_framework',
  
+=======
+>>>>>>> ff09a163fb43c3890afadb7583916f9f7ca0c764
 ]
 
 MIDDLEWARE = [
@@ -137,6 +140,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+<<<<<<< HEAD
 
 STATICFILES_DIRS = (
         os.path.join(BASE_DIR, "static"),
@@ -156,3 +160,5 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '01ffbc770f7968e2344e0ca85e26091b'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='1026996181599-u3andpnegjgj1t82jnnvpmmdo0pneo3o.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'd4211jVtJ9gHLe-rAjDUzsei'
+=======
+>>>>>>> ff09a163fb43c3890afadb7583916f9f7ca0c764
