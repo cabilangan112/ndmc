@@ -112,7 +112,7 @@ class Course(models.Model):
     slug                                = models.SlugField(null=True, blank=True)
 
     def __str__(self):
-        return '{}'.format(self.course_code)
+        return '{} - {}'.format(self.course_code, self.course_description)
 
     @property
     def slug_title(self):
@@ -145,6 +145,7 @@ class PersonalInformation(models.Model):
     date_graduated                      = models.DateTimeField()
     organization_or_employer            = models.CharField(max_length = 255)
     address_organization_or_employer    = models.CharField(max_length = 255)
+    type_of_organization                = models.CharField(max_length = 20)
     date_created                        = models.DateTimeField(auto_now_add = True)
     date_modified                       = models.DateTimeField(auto_now = True)
     slug                                = models.SlugField(null=True, blank=True)

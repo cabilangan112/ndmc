@@ -4,7 +4,15 @@ from .models import Course, Index, Thumbnail, Parallax, PersonalInformation
 
 User = get_user_model()
 
+ORGANIZATION_TYPE = (
+    ('Private', 'Private'),
+    ('Public', 'Public'),
+    ('NGO', 'NGO'),
+    ('Non-Profit', 'Non-Profit')
+)
+
 class PersonalInformationForm(forms.ModelForm):
+    type_of_organization = forms.ChoiceField(choices=ORGANIZATION_TYPE, widget=forms.RadioSelect())
     class Meta:
         model = PersonalInformation
         fields = [
@@ -14,7 +22,7 @@ class PersonalInformationForm(forms.ModelForm):
             'gender',
             'date_of_birth',
             'civil_status',
-            'age',
+            # 'age',
             'email',
             'address',
             'country',
@@ -24,4 +32,5 @@ class PersonalInformationForm(forms.ModelForm):
             'date_graduated',
             'organization_or_employer',
             'address_organization_or_employer',
+            'type_of_organization'
         ]
