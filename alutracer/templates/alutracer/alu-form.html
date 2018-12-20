@@ -27,7 +27,7 @@
               <form method="POST" class="post-form" role="form">{% csrf_token %}
                 <div class="panel-heading">
                   1. PERSONAL INFORMATION 
-                </div>
+                </div><hr>
                 <div class="form-group">
                   <label>Last Name: </label>
                   <input class="form-control" type="text" name="last_name" required id="id_last_name" placeholder="Last Name">
@@ -58,7 +58,6 @@
                     <option value="Married">Married</option>
                   </select>
                 </div>
-                
                 <div class="form-group">
                   <label>Email : </label>
                   <input type="email" class="form-control" name="email" required id="id_email" placeholder="eg. louis_9@gmail.com">
@@ -79,10 +78,9 @@
                   <label>Mobile/Phone Numbers : </label>
                   <input class="form-control" type="number" name="mobile_number" required id="id_mobile_number" placeholder="eg. 090912345678">
                 </div>
-
                 <div class="panel-heading">
                   2. EDUCATIONAL BACKGROUND 
-                </div>
+                </div><hr>
                 <div class="form-group course-list">
                   <label>Course Finished : </label>
                    {{ form.course }}
@@ -91,11 +89,9 @@
                   <label>Date Graduated: </label>
                   <input class="form-control date-picker" type="text" data-lang="en" data-theme="my-style" name="date_graduated" required id="id_date_graduated" placeholder="Date Graduated">
                 </div>
-
-
                 <div class="panel-heading">
                   3. EMPLOYMENT INFORMATION 
-                </div>
+                </div><hr>
                 <div class="form-group">
                   <label>Name of Organization/Employer : </label>
                   <input class="form-control" type="text" name="organization_or_employer" id="id_organization_or_employer" placeholder="Name of Organization/Employer">
@@ -104,8 +100,6 @@
                   <label>Address of Organization/Employer : </label>
                   <input class="form-control" type="text" name="address_organization_or_employer" id="id_address_organization_or_employer" placeholder="Name of Organization/Employer">
                 </div>
-
-
                 <div class="form-group">
                   <label>Type of Organization : </label>
                   <label class="radio-inline">
@@ -121,6 +115,141 @@
                     <input type="radio" name="type_of_organization" id="id_type_of_organization_3" value="Non-Profit">Non-Profit 
                   </label>
                 </div>
+                <div class="form-group">
+                  <label>Is your current job related to the course you took up in College of I.T. and Engr. : </label><br>
+                  <label class="radio-inline">
+                    <input type="radio" name="related_job" id="id_related_job_0" value="Yes">Yes
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="related_job" id="id_related_job_1" value="No">No 
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label>Number of years in the company : </label>
+                  <input class="form-control" type="number" name="number_year_company" required id="id_number_year_company" placeholder="Number of years in the company">
+                </div>
+                <div class="form-group">
+                  <label>Place of work : </label>
+                  <label class="radio-inline">
+                      <input type="radio" name="place_of_work" id="id_place_of_work_0" value="Local">Local 
+                  </label>
+                  <label class="radio-inline">
+                      <input type="radio" name="place_of_work" id="id_place_of_work_1" value="Abroad">Abroad 
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label>Is this your first job after finishing your graduate degree : </label>
+                  <label class="radio-inline">
+                      <input type="radio" name="finish_graduate_degree" id="id_finish_graduate_degree_0" value="Yes">Yes
+                  </label>
+                  <label class="radio-inline">
+                      <input type="radio" name="optionsRadiosInline" id="id_finish_graduate_degree_1" value="No">No 
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label>Please state your reasons for staying on the job : </label>
+                  <textarea name="reason_staying_job" id="id_reason_staying_job" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Designation : </label>
+                  <input type="text" class="form-control" name="designation" id="id_designation" required placeholder="Designation">
+                </div>
+                <div class="form-group">
+                  <label>Department/Division : </label>
+                  <input type="text" class="form-control" name="department_division" id="id_department_division" required placeholder="Department/Division">
+                </div>
+                <div class="form-group">
+                  <label>Job Status : </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="job_status" id="id_job_status_0" value="Permanent">Permanent 
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="job_status" id="id_job_status_1" value="Contractual">Contractual  
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="job_status" id="id_job_status_2" value="Casual">Casual  
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label>Monthly Income Range : </label>
+                  <input type="number" class="form-control" name="monthly_range_income" required placeholder="Monthly Income Range">
+                </div>
+                <div class="form-group">
+                  <label>Were you working while pursuing your degree at NDMC : </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="persuing_degree_ndmc" id="id_persuing_degree_ndmc_0" value="Yes" checked>Yes 
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="persuing_degree_ndmc" id="id_persuing_degree_ndmc_1" value="No">No  
+                  </label><hr>
+                  <div class="form-group">
+                    <label>If not, how long did it take you to find a job after obtaining your degree from NDMC? : </label>
+                    <textarea class="form-control" name="obtaining_degree_ndmc" required id="id_obtaining_degree_ndmc" rows="3"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>How did you come to know about your current job? Through friends, relatives, written enquiries or Advertisement in media? : </label>
+                  <textarea class="form-control" name="advertisement_media" required id="id_advertisement_media" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>IN THE CASE OF SELF EMPLOYMENT, what is the Nature of Employment?   : </label>
+                  <input type="text" class="form-control" name="nature_of_employment" required id="id_nature_of_employment" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label>Number of Years : </label>
+                  <input type="number" class="form-control" name="number_of_years" required id="id_number_of_years" placeholder="Number of Years">
+                </div>
+                <div class="form-group">
+                  <label>Monthly Income Range : </label>
+                  <input type="number" class="form-control" name="monthly_income" required id="id_monthly_income" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label>IN THE CASE OF UNEMPLOYED, Please state your reason(s) why you are unemployed : </label>
+                  <textarea class="form-control" name="case_of_unemployed" required id="id_case_of_unemployed" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>IF PURSUING FURTHER STUDIES, what is the Degree Program and reasons for pursuing further studies? : </label>
+                  <textarea class="form-control" name="persuing_futher_studies" required id="id_persuing_futher_studies" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>IF NOT PURSUING FURTHER STUDIES, Please state your reason : </label>
+                  <textarea class="form-control" name="not_persuing_futher_studies" required id="id_not_persuing_futher_studies" rows="3"></textarea>
+                </div>
+                <div class="panel-heading">
+                  <p>HOW WOULD YOU RATE THE CONTRIBUTION OF THE PROGRAM OF YOUR STUDY AT THE NDMC TO YOUR PERSONAL AND PROFESSIONAL GROWTH IN TERMS OF THE FOLLOWING: (1-poorly 2-fairly 3-highly 4-very highly)</p> 
+                </div>
+
+
+                <div class="form-group">
+                  <label>a. Academic Profession : </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline4" value="option4">4
+                  </label>
+              </div>
+              <div class="form-group">
+                  <label>b. Research Capability : </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline4" value="option4">4
+                  </label>
+                </div>
 
 
 
@@ -134,9 +263,9 @@
       </div>
     </div>
   </div>
-
-
 </div>
 <!-- /#wrapper -->
+
+<!-- {{ form.as_p }} -->
 
 {% endblock content %}
