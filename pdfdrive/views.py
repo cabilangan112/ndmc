@@ -15,7 +15,6 @@ from .forms import (PostForm,
 					AuthorForm
 					)
 
-<<<<<<< HEAD
 class PostView(View):
     def get(self, request, *args, **kwargs):
         post = Post.objects.all()
@@ -50,6 +49,4 @@ class PdfUploadView(LoginRequiredMixin ,View):
             'form': form
         }
         return render(request, self.template_name, context)
-=======
 # Create your views here.
->>>>>>> ff09a163fb43c3890afadb7583916f9f7ca0c764
