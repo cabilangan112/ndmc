@@ -49,7 +49,7 @@ class PersonalInfoCreateView(View):
             post = form.save(commit=False)
             post.user = request.user
             post.save()
-            return redirect('personal-info-detail', slug=post.slug)
+            return redirect('alutracer:personal-info-detail', slug=post.slug)
         else:
             form = PersonalInformationForm()
         context = {
