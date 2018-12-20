@@ -7,7 +7,6 @@ from .utils import unique_slug_generator
 User = settings.AUTH_USER_MODEL
 
 # Create your models here.
-<<<<<<< HEAD
 
 GENDER = (
     ('Male', 'Male'),
@@ -173,5 +172,3 @@ pre_save.connect(rl_pre_save_receiver, sender=Index)
 pre_save.connect(rl_pre_save_receiver, sender=Question)
 pre_save.connect(rl_pre_save_receiver, sender=Course)
 pre_save.connect(rl_pre_save_receiver, sender=PersonalInformation)
-=======
->>>>>>> ff09a163fb43c3890afadb7583916f9f7ca0c764
