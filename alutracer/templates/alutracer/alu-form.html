@@ -1,8 +1,142 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-<div style="margin-top: 100px">
-  {% csrf_token %}
-  {{ form }}
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <a class="ndmc-logo" href="">
+            <img alt="Brand" src="{% static 'img/ndmc-logo.jpeg' %}">
+          </a>
+          <p>Kindly complete this questionnaire accurately and truthfully. Your responses will be used for research purposes to assess employability and eventually, improve the curriculum of the programs offered in the College of Information Technology and Engineering, Notre Dame of Midsayap College. Results of this tracer study will only be presented in summary form and your answers to this survey will be treated with utmost confidentiality. Thank you very much!</p>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          FORM
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <form method="POST" class="post-form" role="form">{% csrf_token %}
+                <div class="panel-heading">
+                  1. PERSONAL INFORMATION 
+                </div>
+                <div class="form-group">
+                  <label>Last Name: </label>
+                  <input class="form-control" type="text" name="last_name" required id="id_last_name" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                  <label>First Name: </label>
+                  <input class="form-control" type="text" name="first_name" required id="id_first_name" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                  <label>Middle Name: </label>
+                  <input class="form-control" type="text" name="middle_name" required id="id_middle_name" placeholder="Middle Name">
+                </div>
+                <div class="form-group">
+                  <label>Gender</label>
+                  <select class="form-control" name="gender" required id="id_gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Birth Date: </label>
+                  <input class="form-control date-picker" type="text" data-lang="en" data-theme="my-style" name="date_of_birth" required id="id_date_of_birth" placeholder="Birth Date">
+                </div>
+                <div class="form-group">
+                  <label>Civil Status :</label>
+                  <select class="form-control" name="civil_status" required id="id_civil_status">
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label>Email : </label>
+                  <input type="email" class="form-control" name="email" required id="id_email" placeholder="eg. louis_9@gmail.com">
+                </div>
+                <div class="form-group">
+                  <label>PRESENT ADDRESS: </label>
+                  <textarea class="form-control" name="address" required id="id_address" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Country : </label>
+                  <input class="form-control" name="country" required id="id_country" placeholder="Country">
+                </div>
+                <div class="form-group">
+                  <label>Facebook/Twitter Account: </label>
+                  <input class="form-control" type="text" name="social_media_account" required id="id_social_media_account" placeholder="Social Media Accounts">
+                </div>
+                <div class="form-group">
+                  <label>Mobile/Phone Numbers : </label>
+                  <input class="form-control" type="number" name="mobile_number" required id="id_mobile_number" placeholder="eg. 090912345678">
+                </div>
+
+                <div class="panel-heading">
+                  2. EDUCATIONAL BACKGROUND 
+                </div>
+                <div class="form-group course-list">
+                  <label>Course Finished : </label>
+                   {{ form.course }}
+                </div>
+                <div class="form-group">
+                  <label>Date Graduated: </label>
+                  <input class="form-control date-picker" type="text" data-lang="en" data-theme="my-style" name="date_graduated" required id="id_date_graduated" placeholder="Date Graduated">
+                </div>
+
+
+                <div class="panel-heading">
+                  3. EMPLOYMENT INFORMATION 
+                </div>
+                <div class="form-group">
+                  <label>Name of Organization/Employer : </label>
+                  <input class="form-control" type="text" name="organization_or_employer" id="id_organization_or_employer" placeholder="Name of Organization/Employer">
+                </div>
+                <div class="form-group">
+                  <label>Address of Organization/Employer : </label>
+                  <input class="form-control" type="text" name="address_organization_or_employer" id="id_address_organization_or_employer" placeholder="Name of Organization/Employer">
+                </div>
+
+
+                <div class="form-group">
+                  <label>Type of Organization : </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="type_of_organization" id="id_type_of_organization_0" value="Private" required>Private
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="type_of_organization" id="id_type_of_organization_1" value="Public">Public 
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="type_of_organization" id="id_type_of_organization_2" value="NGO">NGO 
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="type_of_organization" id="id_type_of_organization_3" value="Non-Profit">Non-Profit 
+                  </label>
+                </div>
+
+
+
+
+                <button type="submit" class="btn btn-default">Submit Button</button>
+                <button type="reset" class="btn btn-default">Reset Button</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </div>
+<!-- /#wrapper -->
+
 {% endblock content %}

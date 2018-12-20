@@ -1,3 +1,4 @@
+from datetime import date
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -48,8 +49,13 @@ class PersonalInfoCreateView(View):
         if form.is_valid():
             post = form.save(commit=False)
             post.user = request.user
+            today = date.today()
+            dob = post.date_of_birth
+            post.age = today.year - dob.year
+            if today.month < dob.month or today.month == dob.month and today.day < dob.day:
+                age -= 1
             post.save()
-            return redirect('personal-info-detail', slug=post.slug)
+            return redirect('alutracer:personal-info-detail', slug=post.slug)
         else:
             form = PersonalInformationForm()
         context = {
