@@ -181,8 +181,8 @@ a.article, a.article:hover {
 ----------------------------------------------------- */
 @media (max-width: 768px) {
   #content{
-  margin: 0px;
-  width: 105%;
+  margin: -10px;
+  width: 125%;
   left: 0px;
   right: 0px;
   }
@@ -216,3 +216,4 @@ a.article, a.article:hover {
   }
 
 }
+
