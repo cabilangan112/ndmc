@@ -26,13 +26,13 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="">
-              <img alt="NDMC" src="{% static '/img/favicon.ico' %}">
+              <img alt="Brand" src="{% static '/img/favicon.ico' %}">
             </a>
             <a class="navbar-brand navbar-resize" href="{% url 'home' %}">NDMC Alumni Tracer and Research Repository</a>
           </div>
           <div id="navbar" class="navbar-collapse navbar-right collapse">
             <ul class="nav navbar-nav">
-              <li><a href="{% url 'alutracer:personal-info-create' %}">Alumni Tracer</a></li>
+              <li><a href="#">Alumni Tracer</a></li>
               <li><a href="#">Research Repository</a></li>
             </ul>
             <button type="button" class="btn btn-sign-in navbar-btn navbar-right btn-layout button" data-toggle="modal" data-target="#myModal">
@@ -63,10 +63,6 @@
               </form>
             </div>
             <div class="modal-footer">
-              <div class='label label-error mt-1 d-invisible' id='modal-error'>
-              Unable to login!
-              </div>
-              </div>
               <div class="footer-modal-social">
                 <a href="{% url 'social:begin' 'facebook' %}"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                 <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
@@ -75,7 +71,7 @@
               <button type="button" class="btn btn-sign-in navbar-btn navbar-right btn-layout button footer-modal-btn" data-dismiss="modal">
                 <span>Close</span>
               </button>
-              <button type="submit" class="btn btn-sign-in navbar-btn navbar-right btn-layout button footer-modal-btn" id="loginOkButton">
+              <button type="submit" class="btn btn-sign-in navbar-btn navbar-right btn-layout button footer-modal-btn">
                 <span>Login</span>
               </button>
             </div>
@@ -94,7 +90,7 @@
           <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
         </div>
         <div id="cont">
-          <img alt="NDMC" class="footer-logo" src="{% static 'img/ndmc-logo.jpeg' %}">
+          <img alt="Brand" class="footer-logo" src="{% static 'img/ndmc-logo.jpeg' %}">
           <div class="footer_center">
             <h3>NDMC</h3>
             <p>Alumni Tracer and Research Repository</p>
@@ -104,7 +100,7 @@
       </div>
     </div>
     <!-- back to top -->
-    <a href="" class="cd-top js-cd-top">Top</a>
+    <a href="#0" class="cd-top js-cd-top">Top</a>
     {% include 'snippets/js.html' %}
   </body>
 </html>
