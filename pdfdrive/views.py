@@ -49,3 +49,4 @@ class PdfUploadView(LoginRequiredMixin ,View):
             'form': form
         }
         return render(request, self.template_name, context)
+# Create your views here.

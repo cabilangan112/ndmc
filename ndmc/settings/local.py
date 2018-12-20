@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'pdfdrive',
     'social_django',
     'rest_framework',
- 
 ]
 
 MIDDLEWARE = [

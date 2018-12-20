@@ -181,14 +181,14 @@ a.article, a.article:hover {
 ----------------------------------------------------- */
 @media (max-width: 768px) {
   #content{
-    margin: 0px;
-    width: 105%;
-    left: 0px;
-    right: 0px;
+  margin: 0px;
+  width: 105%;
+  left: 0px;
+  right: 0px;
   }
   #sidebar {
-      margin-left: -250px;
-      transform: rotateY(90deg);
+    margin-left: -250px;
+    transform: rotateY(90deg);
   }
   #sidebar.active {
       margin-left: 0;
@@ -197,9 +197,9 @@ a.article, a.article:hover {
   #sidebarCollapse span:first-of-type,
   #sidebarCollapse span:nth-of-type(2),
   #sidebarCollapse span:last-of-type {
-      transform: none;
-      opacity: 1;
-      margin: 5px auto;
+    transform: none;
+    opacity: 1;
+    margin: 5px auto;
   }
   #sidebarCollapse.active span {
       margin: 0 auto;

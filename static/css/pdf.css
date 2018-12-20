@@ -3,6 +3,7 @@
 }
 .pdf{
   text-align: center;
+  border-radius: 5px;
 }
 .search-box {
   width: 100%;
