@@ -160,4 +160,7 @@ def rl_pre_save_receiver(sender, instance, *args, **kwargs):
         instance.slug = unique_slug_generator(instance)
 
 pre_save.connect(rl_pre_save_receiver, sender=Index)
+pre_save.connect(rl_pre_save_receiver, sender=Thumbnail)
+pre_save.connect(rl_pre_save_receiver, sender=Parallax)
+pre_save.connect(rl_pre_save_receiver, sender=Course)
 pre_save.connect(rl_pre_save_receiver, sender=PersonalInformation)

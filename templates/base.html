@@ -63,6 +63,10 @@
               </form>
             </div>
             <div class="modal-footer">
+              <div class='label label-error mt-1 d-invisible' id='modal-error'>
+              Unable to login!
+              </div>
+              </div>
               <div class="footer-modal-social">
                 <a href="{% url 'social:begin' 'facebook' %}"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                 <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
@@ -71,7 +75,7 @@
               <button type="button" class="btn btn-sign-in navbar-btn navbar-right btn-layout button footer-modal-btn" data-dismiss="modal">
                 <span>Close</span>
               </button>
-              <button type="submit" class="btn btn-sign-in navbar-btn navbar-right btn-layout button footer-modal-btn">
+              <button type="submit" class="btn btn-sign-in navbar-btn navbar-right btn-layout button footer-modal-btn" id="loginOkButton">
                 <span>Login</span>
               </button>
             </div>
