@@ -19,5 +19,9 @@ class PersonalInformationForm(forms.ModelForm):
             'address',
             'country',
             'social_media_account',
-            'mobile_number'
+            'mobile_number',
+            'course',
+            'date_graduated',
+            'organization_or_employer',
+            'address_organization_or_employer',
         ]
