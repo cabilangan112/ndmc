@@ -50,11 +50,11 @@ class Parallax(models.Model):
     slug                                = models.SlugField(null=True, blank=True)
 
     def __str__(self):
-        return '{}'.format(self.parallax_1_heading_content)
+        return '{}'.format(self.parallax_1_heading)
 
     @property
     def slug_title(self):
-        return '{}'.format(self.parallax_1_heading_content)
+        return '{}'.format(self.parallax_1_heading)
 
     class Meta:
         ordering = ['-id']
