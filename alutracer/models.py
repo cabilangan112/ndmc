@@ -15,7 +15,9 @@ GENDER = (
 
 CIVIL_STATUS = (
     ('Single', 'Single'),
-    ('Married', 'Married')
+    ('Married', 'Married'),
+    ('Separated', 'Separated'),
+    ('Widowed', 'Widowed')
 )
 
 class Index(models.Model):
@@ -110,33 +112,24 @@ class PersonalInformation(models.Model):
                                                     )
     age                                 = models.IntegerField()
     email                               = models.EmailField()
-    address                             = models.TextField()
-    country                             = models.TextField()
-    social_media_account                = models.CharField(max_length = 255)
     mobile_number                       = models.CharField(max_length = 20)
+    a_street_adress                     = models.TextField()
+    a_address_line_2                    = models.TextField()
+    a_city                              = models.CharField(max_length = 255)
+    a_state_province_region             = models.TextField()
+    a_zip_code                          = models.CharField(max_length = 255)
+    a_country                           = models.CharField(max_length = 255)
+
+    b_street_adress                     = models.TextField()
+    b_address_line_2                    = models.TextField()
+    b_city                              = models.CharField(max_length = 255)
+    b_state_province_region             = models.TextField()
+    b_zip_code                          = models.CharField(max_length = 255)
+    b_country                           = models.CharField(max_length = 255)
+
     course                              = models.ForeignKey('Course', on_delete = models.CASCADE)
     date_graduated                      = models.DateTimeField()
-    organization_or_employer            = models.CharField(max_length = 255)
-    address_organization_or_employer    = models.CharField(max_length = 255)
-    type_of_organization                = models.CharField(max_length = 20)
-    related_job                         = models.CharField(max_length = 3)
-    number_year_company                 = models.CharField(max_length = 3)
-    place_of_work                       = models.CharField(max_length = 6)
-    finish_graduate_degree              = models.CharField(max_length = 3)
-    reason_staying_job                  = models.TextField()
-    designation                         = models.CharField(max_length = 255)
-    department_division                 = models.CharField(max_length = 255)
-    job_status                          = models.CharField(max_length = 11)
-    monthly_range_income                = models.CharField(max_length = 255)
-    persuing_degree_ndmc                = models.CharField(max_length = 3)
-    obtaining_degree_ndmc               = models.TextField()
-    advertisement_media                 = models.TextField()
-    nature_of_employment                = models.CharField(max_length=500)
-    number_of_years                     = models.CharField(max_length = 3)
-    monthly_income                      = models.CharField(max_length = 255)
-    case_of_unemployed                  = models.TextField()
-    persuing_futher_studies             = models.TextField()
-    not_persuing_futher_studies         = models.TextField()
+    
     date_created                        = models.DateTimeField(auto_now_add = True)
     date_modified                       = models.DateTimeField(auto_now = True)
     slug                                = models.SlugField(null=True, blank=True)
