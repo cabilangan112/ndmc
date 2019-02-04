@@ -25,35 +25,37 @@
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
-
  
- 
- 
-
+.title img {
+  border: 1px solid #ddd; 
+  border-radius: 4px;  
+  padding: 5px; 
+  width: 150px;
+}
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
  
 @media (max-width: 1000px){
-  .navbars{
-    margin-top:20px;
-    width: 104%; 
-    margin-left: -10px;
-  }
-  .pdf{
-    margin-left: -10px;
-    width: 104%;
+  #content{
+    margin: 10px;
     left: 0;
     right: 0;
-    height: 300px;
- 
+    margin-bottom: 50px;
   }
-  .search{
-    width: 90%
-  }
-  .navbar-collapse .active{
-    margin-left: -4px;
-    margin-right: 5px;
-    right: 0;
+  #content .navbar-header{
     left: 0;
+    right: 0;
   }
-  #sidebar .navbars{
-    width: 0px;
+  #content .navbars{
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-left: -25px;
+    margin-right: 320px;
+
+  }
+  #content .pdf{
+    margin-left: -25px;
+  }
   }
