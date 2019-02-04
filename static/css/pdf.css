@@ -10,7 +10,7 @@
   position: relative;
 }
  .search{
- padding-top: 10px;
+  padding-top: 10px;
   text-align: center;
 }
 .search input[type="text"]{
@@ -58,4 +58,17 @@ img:hover {
   #content .pdf{
     margin-left: -25px;
   }
+ 
+  #bs-example-navbar-collapse-1{
+  left: 0;
+  right: 0;
+  margin-right: -200px;
+  }
+  #bs-example-navbar-collapse-1 .search{
+    width: 100%;
+  }
+  .navbar-collapse{
+    width: 110%;
+  }
+
   }
