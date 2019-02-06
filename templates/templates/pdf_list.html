@@ -1,24 +1,40 @@
-{% extends "base.html" %}
-{% load staticfiles %}
+
+
+{% load static from staticfiles %}
+{% block content %} 
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>
-			PDF-Drive
-		</title> 
-	</head>
-	{% block content %} 
-		<body style="margin-left:200px;">
-			{% if post %}
-				<div>
-					{% for post in post %}
-						<a href='{% url "pdfdrive:detail" post.title%}'   role="button" >{{ post.title }}</a> 
-						<p>{{ post.description }}</p>
-					{% endfor %}
-		  	</div>
-			{% else %}
-				<p>Emplty Reaserch</p>
-			{% endif %}
-		</body>
-	{% endblock %}
-</html>
+  <head>
+    <title>NDMC Library | Book List</title>
+    <link href="{% static 'css/research-list.css' %}" rel="stylesheet">
+  </head>
+  {% include 'base.html'%}  
+  <body>
+    <div>
+    <div class="list">
+      <form class='form' method='GET' action='.'>
+        <input type='text' placeholder='Search..' name='q' value='{{ request.GET.q }}'>
+        <button class='btn btn-default' type='submit'  >Search</button>
+    </form>
+       
+      {% if post %}
+        {% for post in post %}
+        <div class="card">
+
+          <h2 class="author"><a  class="link" href=" ">{{ post.title }}</a></h2>
+   
+          <div>
+          <button  type="button" class="buttons btn button btn-sign-in"  >
+          <span>View Details</span>
+          </button> 
+        </div>
+        </div>
+
+        {% endfor %}
+      {% else %}
+        <p>Empty</p>
+      {% endif %}
+    </div>
+  </body>
+ 
+{% endblock content %}

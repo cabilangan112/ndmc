@@ -1,9 +1,14 @@
 .title{
   text-align: center;
 }
+.head{
+  text-align: center;
+  text-decoration: underline;
+}
 .pdf{
   width: 100%;
   border-radius: 5px;
+  z-index: -1;
 }
 .search-box {
   width: 100%;
@@ -69,6 +74,9 @@ img:hover {
   }
   .navbar-collapse{
     width: 110%;
+  }
+  #content .pdf{
+    z-index: -1;
   }
 
   }

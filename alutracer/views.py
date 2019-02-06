@@ -35,6 +35,32 @@ class PersonalInfoDetailView(View):
         }
         return render(request, 'alutracer/alu-detail.html', context)
 
+
+class Pdf(View):
+
+    def get(self, request):
+        profile = PersonalInformation.objects.all()
+        today = timezone.now()
+        params = {
+            'today': today,
+            'profile': profile,
+            'request': request
+        }
+        return Render.render('pdf.html', params)
+
+class PdfDetail(View):
+
+    def get(self,pk, request):
+        profile = get_object_or_404(PersonalInformation, pk=pk)
+        today = timezone.now()
+        params = {
+            'today': today,
+            'profile': profile,
+            'request': request
+        }
+        return Render.render('catalog/pdf.html', params)
+
+
 class PersonalInfoCreateView(View):
     form_class = PersonalInformationForm
     initial = {'key':'value'}
