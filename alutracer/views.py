@@ -79,7 +79,7 @@ class PersonalInfoCreateView(View):
             dob = post.date_of_birth
             post.age = today.year - dob.year
             if today.month < dob.month or today.month == dob.month and today.day < dob.day:
-                age -= 1
+                post.age -= 1
             post.save()
             return redirect('alutracer:personal-info-detail', slug=post.slug)
         else:

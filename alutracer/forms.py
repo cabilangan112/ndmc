@@ -4,36 +4,7 @@ from .models import Course, Index, Thumbnail, Parallax, PersonalInformation
 
 User = get_user_model()
 
-ORGANIZATION_TYPE = (
-    ('Private', 'Private'),
-    ('Public', 'Public'),
-    ('NGO', 'NGO'),
-    ('Non-Profit', 'Non-Profit')
-)
-
-RELATED_JOB = (
-    ('Yes', 'Yes'),
-    ('No', 'No')
-)
-
-PLACE_WORK = (
-    ('Local', 'Local'),
-    ('Abroad', 'Abroad')
-)
-
-JOB_STATUS = (
-    ('Permanent', 'Permanent'),
-    ('Contractual', 'Contractual'),
-    ('Casual', 'Casual')
-)
-
 class PersonalInformationForm(forms.ModelForm):
-    type_of_organization        = forms.ChoiceField(choices=ORGANIZATION_TYPE, widget=forms.RadioSelect())
-    related_job                 = forms.ChoiceField(choices=RELATED_JOB, widget=forms.RadioSelect())
-    place_of_work               = forms.ChoiceField(choices=PLACE_WORK, widget=forms.RadioSelect())
-    finish_graduate_degree      = forms.ChoiceField(choices=RELATED_JOB, widget=forms.RadioSelect())
-    job_status                  = forms.ChoiceField(choices=JOB_STATUS, widget=forms.RadioSelect())
-    persuing_degree_ndmc        = forms.ChoiceField(choices=RELATED_JOB, widget=forms.RadioSelect())
     class Meta:
         model = PersonalInformation
         fields = [
@@ -44,15 +15,28 @@ class PersonalInformationForm(forms.ModelForm):
             'date_of_birth',
             'civil_status',
             'email',
-            'address',
-            'country',
-            'social_media_account',
             'mobile_number',
+            'a_street_adress',                     
+            'a_address_line_2',                    
+            'a_city',                              
+            'a_state_province_region',
+            'a_zip_code',                          
+            'a_country',
+            'b_street_adress',                     
+            'b_address_line_2',                    
+            'b_city',                              
+            'b_state_province_region',
+            'b_zip_code',                          
+            'b_country',
+            'facebook_account',
+            'twitter_account',
             'course',
             'date_graduated',
             'organization_or_employer',
             'address_organization_or_employer',
             'type_of_organization',
+            'employment_type',
+            'occupational_classification',
             'related_job',
             'number_year_company',
             'place_of_work',
@@ -64,11 +48,68 @@ class PersonalInformationForm(forms.ModelForm):
             'monthly_range_income',
             'persuing_degree_ndmc',
             'obtaining_degree_ndmc',
-            'advertisement_media',
+            'current_job',
+            'first_employment',
+            'work_related_course',
             'nature_of_employment',
             'number_of_years',
-            'monthly_income',
-            'case_of_unemployed',
-            'persuing_futher_studies',
-            'not_persuing_futher_studies'
+            'monthly_income_range',               
+            'reason_of_unemployed',
+            'academic_professional',
+            'research_capability',
+            'learning_efficiency',
+            'communication_skills',
+            'people_skills',
+            'problem_solving_skills',
+            'information_technology_skills',
+            'meeting_present',
+            'local_community',
+            'international_community',
+            'critical_thinking_skills',
+            'salary_improvement',
+            'opportunities_abroad',
+            'personality_development',
+            'values_formation',
+            'range_of_courses',
+            'relevance_profession',
+            'extracurricular_activities',
+            'premium_given_research',
+            'interdisciplinary_learning',
+            'teaching_learning',
+            'quality_instruction',
+            'teacher_student_relationships',
+            'library_resources',
+            'laboratory_resources',
+            'class_size',
+            'professors_pedagogical',
+            'professors_knowledge',
+            'degree_program',
+            'pursuing_further_studies',     
+            'not_pursuing_further_studies',
+            'name_1',
+            'contact_1',                        
+            'email_id_1',                        
+            'social_network_id_1',  
+
+            'name_2',
+            'contact_2',                        
+            'email_id_2',                        
+            'social_network_id_2',    
+
+            'name_3',
+            'contact_3',                        
+            'email_id_3',                        
+            'social_network_id_3', 
+
+            'name_4',
+            'contact_4',                        
+            'email_id_4',                        
+            'social_network_id_4',
+
+            'name_5',
+            'contact_5',                        
+            'email_id_5',                        
+            'social_network_id_5',
+
+
         ]
